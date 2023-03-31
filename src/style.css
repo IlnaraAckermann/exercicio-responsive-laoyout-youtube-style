@@ -1,0 +1,87 @@
+body {
+    background-color: #F7F7F7;
+    font-family: 'Roboto';
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 600px 300px;
+    grid-template-rows: 56px auto;
+    grid-template-areas: "principal propaganda"
+                         "principal secundario";
+    gap: 10px;
+    justify-content: center;
+    margin: 38px;
+}
+
+main {
+    grid-area: principal;  
+    display: flex;   
+}
+
+aside {
+    grid-area: secundario;
+}
+
+
+.video {
+    background-color: #C4C4C4;
+}
+
+.destaque .video {
+    width: 1fr;
+    height: 217px;
+}
+
+
+h1 {
+    font-style: normal;
+    font-weight: 700;
+    margin-top: 12px;
+    margin: 12px 0 7px 0;
+}
+
+.destaque .visualizacao {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+p {
+    font-weight: 300;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.propaganda {
+    background: #C4C4C4;
+    width: 300px;
+    grid-area: propaganda;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.video-alternativo{
+    display: flex;
+    margin: 15px 0;
+}
+
+.video-alternativo .conteudo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px; 
+    
+}
+.video-alternativo .video {
+    width: 101px;
+}
+
+.video-alternativo .visualizacao,
+.video-alternativo .autor,
+.video-alternativo .data {
+    font-weight: 300;
+    font-size: 11px;
+    margin-top: 5px;
+}

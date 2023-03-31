@@ -1,0 +1,19 @@
+@media (max-width: 900px) {
+    .grid {
+        grid-template-rows: auto 56px auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: "principal"
+        "propaganda"
+        "secundario";
+
+        margin: 10px;
+    }
+    .destaque .video {
+        width:1fr;
+        height:56svw;
+    }
+    .video-alternativo{
+        display: inline-flex;
+        margin: 0 15px 15px 0;
+    }
+}

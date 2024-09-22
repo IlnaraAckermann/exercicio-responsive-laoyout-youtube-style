@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    background-color: #F9F9F9;
+    font-family: 'Roboto';
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 600px 300px;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "menu menu"
+        "principal secundario";
+    gap: 10px;
+    justify-content: center;
+}
+
+main {
+    grid-area: principal;
+    display: flex;
+}
+
+aside {
+    grid-area: secundario;
+    & .video-alternativo:not(:first-child) {
+        margin-top: 10px;
+    }
+}
+
+
+.video {
+    background-color: #C4C4C4;
+}
+
+h1 {
+    font-style: normal;
+    font-weight: 700;
+    margin-top: 12px;
+    margin: 12px 0 7px 0;
+}
+
+.destaque {
+    & .visualizacao {
+        font-weight: 300;
+        font-size: 14px;
+    }
+
+    & .video {
+        width: 1fr;
+        height: 217px;
+    }
+}
+
+p {
+    font-weight: 300;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+
+h2 {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.video-alternativo {
+    display: flex;
+    gap: 10px;
+
+    & .conteudo {
+        display: flex;
+        flex-direction: column;
+        padding: .5rem 0;
+    }
+
+    & .video {
+        width: 101px;
+    }
+
+    & .visualizacao,
+    & .autor,
+    & .data {
+        font-weight: 300;
+        font-size: 11px;
+    }
+
+    & .autor {
+        margin: .25rem 0;
+    }
+
+}
+
+.menu {
+    grid-area: menu;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+
+    & img.logo {
+        width: auto;
+        height: fit-content;
+        margin-left: .5rem;
+    }
+
+    & nav {
+        display: flex;
+        flex-direction: row;
+
+        & .hamburguer {
+            appearance: none;
+        }
+
+        & label {
+            display: block;
+            cursor: pointer;
+            padding: .5rem 0;
+
+            & span {
+                display: block;
+                position: relative;
+                height: 2px;
+                width: 1rem;
+                background-color: #000;
+                transition: .5s;
+                border-radius: 2px;
+
+                &::after,
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    height: 2px;
+                    width: 1rem;
+                    background: #000;
+                    transition: .5s;
+                    border-radius: 2px;
+                }
+
+                &::before {
+                    margin-top: .25rem;
+                }
+
+                &::after {
+                    margin-top: -.25rem;
+                }
+            }
+        }
+
+        & .hamburguer:checked+label span {
+            background-color: transparent;
+
+            &::before {
+                transform: rotate(45deg);
+                margin-top: 0;
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+                margin-top: 0;
+            }
+        }
+
+        & ul {
+            list-style: none;
+            margin-top: 1.25rem;
+            position: absolute;
+            transition: .5s;
+            display: none;
+            margin-left: .25rem;
+
+            & li:not(:first-child) {
+                margin-top: .25rem;
+            }
+        }
+
+        & .hamburguer:checked+label+ul {
+            display: block;
+        }
+
+
+    }
+
+    & .procurar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        & input {
+            border: 1px solid #CCCCCC;
+            padding: .25rem;
+            height: 40px;
+            width: 400px;
+        }
+
+        & span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: -2rem;
+            border: 1px solid #CCCCCC;
+            background-color: #F8F8F8;
+            width: 60px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        & img {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+
+    & .perfil {
+        display: flex;
+        flex-direction: row;
+        gap: .5rem;
+
+        & img {
+            width: 1rem;
+            height: 1rem;
+            cursor: pointer;
+        }
+    }
+}
+
+
+.rounded {
+    border-radius: 50%;
+}

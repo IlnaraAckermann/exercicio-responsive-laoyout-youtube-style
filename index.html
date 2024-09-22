@@ -5,14 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/reset.css">
-    <link rel="stylesheet" href="./src/style.css">
-    <link rel="stylesheet" href="./src/responsive.css">
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/style.css">
+    <link rel="stylesheet" href="./src/styles/responsive.css">
     <title>Fake Youtube</title>
 </head>
 
 <body>
     <div class="grid">
+        <header class="menu">
+            <nav class="mobile-nav">
+                <input type="checkbox" id="menu-hamburguer" class="hamburguer">
+                <label for="menu-hamburguer">
+                    <span></span>
+                </label>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Em alta</a></li>
+                    <li><a href="#">Inscrições</a></li>
+                    <li><a href="#">Originais</a></li>
+                    <li><a href="#">Histórico</a></li>
+                </ul>
+                <img src="./src/img/youtube 1.png" alt="logo" class="logo">
+            </nav>
+            <div class="procurar">
+                <input type="search" name="" id="">
+                <span>
+                    <img src="./src/img/search.png" alt="lupa">
+                </span>
+            </div>
+
+            <div class="perfil">
+                <img src="./src/img/video.png" alt="camera" title="criar">
+                <img src="./src/img/bell.png" alt="sino" title="notificações">
+                <img src="./src/img/avatar.jpg" alt="avatar" class="rounded">
+            </div>
+
+        </header>
         <main>
             <div class="destaque">
                 <div class="video"></div>
@@ -27,8 +56,7 @@
                 </div>
             </div>
         </main>
-        
-        <div class="propaganda"></div>
+
         <aside>
             <div class="video-alternativo">
                 <div class="video"></div>
@@ -36,7 +64,7 @@
                     <h2>Título do vídeo de grande</h2>
                     <span class="autor">Ilnara Ackermann</span>
                     <span class="visualizacao">100 mil visualizações</span>
-                    <span class="data">há 3 semanas</span>
+                    <span class="data">Transmitido há 3 dias</span>
                 </div>
             </div>
             <div class="video-alternativo">
@@ -45,7 +73,7 @@
                     <h2>Título do vídeo de grande</h2>
                     <span class="autor">Ilnara Ackermann</span>
                     <span class="visualizacao">100 mil visualizações</span>
-                    <span class="data">há 3 semanas</span>
+                    <span class="data">Transmitido há 3 dias</span>
                 </div>
             </div>
             <div class="video-alternativo">
@@ -54,7 +82,7 @@
                     <h2>Título do vídeo de grande</h2>
                     <span class="autor">Ilnara Ackermann</span>
                     <span class="visualizacao">100 mil visualizações</span>
-                    <span class="data">há 3 semanas</span>
+                    <span class="data">Transmitido há 3 dias</span>
                 </div>
             </div>
         </aside>

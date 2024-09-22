@@ -7,7 +7,7 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: 600px 300px;
+    grid-template-columns: 2fr 1frpx;
     grid-template-rows: auto;
     grid-template-areas:
         "menu menu"
@@ -23,6 +23,7 @@ main {
 
 aside {
     grid-area: secundario;
+
     & .video-alternativo:not(:first-child) {
         margin-top: 10px;
     }
@@ -30,7 +31,11 @@ aside {
 
 
 .video {
-    background-color: #C4C4C4;
+
+    & img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 h1 {
@@ -48,7 +53,6 @@ h1 {
 
     & .video {
         width: 1fr;
-        height: 217px;
     }
 }
 

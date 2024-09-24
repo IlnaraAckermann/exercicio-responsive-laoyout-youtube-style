@@ -7,22 +7,23 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: 2fr 1frpx;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
         "menu menu"
         "principal secundario";
-    gap: 10px;
-    justify-content: center;
 }
 
 main {
     grid-area: principal;
     display: flex;
+    padding: 1rem;
+    justify-content: end;
 }
 
 aside {
     grid-area: secundario;
+    padding: 1rem;
 
     & .video-alternativo:not(:first-child) {
         margin-top: 10px;
@@ -31,9 +32,8 @@ aside {
 
 
 .video {
-
     & img {
-        width: 100%;
+        max-width: 100%;
         height: auto;
     }
 }
@@ -46,21 +46,21 @@ h1 {
 }
 
 .destaque {
+    flex-direction: column;
+
     & .visualizacao {
-        font-weight: 300;
+        font-weight: 600;
         font-size: 14px;
     }
 
-    & .video {
-        width: 1fr;
+    & p {
+        font-weight: 300;
+        font-size: 12px;
+        margin: 10px 0;
+        color: #515151;
     }
 }
 
-p {
-    font-weight: 300;
-    font-size: 16px;
-    margin: 10px 0;
-}
 
 
 h2 {
@@ -78,15 +78,12 @@ h2 {
         padding: .5rem 0;
     }
 
-    & .video {
-        width: 101px;
-    }
-
     & .visualizacao,
     & .autor,
     & .data {
         font-weight: 300;
-        font-size: 11px;
+        font-size: 12px;
+        color: #515151;
     }
 
     & .autor {
@@ -175,6 +172,7 @@ h2 {
             transition: .5s;
             display: none;
             margin-left: .25rem;
+            background-color: #fff;
 
             & li:not(:first-child) {
                 margin-top: .25rem;
@@ -234,4 +232,82 @@ h2 {
 
 .rounded {
     border-radius: 50%;
+}
+
+.channel-info {
+    margin-bottom: .5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+
+    & .channel-logo {
+        display: flex;
+        font-size: 14px;
+        gap: 10px;
+        & img {
+            width: 42px;
+            height: 42px;
+            display: inline-block;
+        }
+
+        & div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        & .channel-name {
+            font-weight: 600;
+        }
+
+        & .channel-subscribers {
+            font-weight: 400;
+            color: #515151;
+        }
+
+    }
+
+    & button.subscribe {
+        background-color: #FF0000;
+        color: #fff;
+        padding: .5rem 1rem;
+        border: none;
+        height: 40px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+        & i {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            &::before {
+                content: '';
+                width: 1.5rem;
+                height: 1.5rem;
+                background-size: cover;
+                margin-right: 5px;
+            }
+            &.thumbs-ups::before {
+                background-image: url('../img/thumbs-up.png');
+            }
+
+            &.thumbs-down::before {
+                background-image: url('../img/thumbs-down.png');
+            }
+            &.share::before {
+                background-image: url('../img/share-2.png');
+            }
+            &.download::before {
+                background-image: url('../img/download.png');
+            }
+        }
+
+    
 }

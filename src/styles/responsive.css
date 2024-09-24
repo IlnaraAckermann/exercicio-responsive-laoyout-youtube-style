@@ -2,20 +2,53 @@
     .grid {
         grid-template-rows: auto;
         grid-template-columns: 1fr;
-        grid-template-areas: 
-        "menu"
-        "principal"
-        "propaganda"
-        "secundario";
+        grid-template-areas:
+            "menu"
+            "principal"
+            "propaganda"
+            "secundario";
 
         margin: 10px;
     }
+
     .destaque .video {
-        width:1fr;
-        height:56svw;
+        width: 1fr;
+        height: 56svw;
     }
-    .video-alternativo{
-        display: inline-flex;
-        margin: 0 15px 15px 0;
+
+    aside {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-gap: 10px;
     }
+    .video-alternativo {
+        display: flex;
+        & .video img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .menu {
+        justify-content: normal;
+
+        & .procurar {
+            & input {
+                display: none;
+            }
+
+            & span {
+                border: none;
+                background-color: transparent;
+                margin-left: 0;
+
+            }
+
+        }
+        & .perfil {
+            position: absolute;
+            right: 1.5rem;
+        }
+    }
+
 }

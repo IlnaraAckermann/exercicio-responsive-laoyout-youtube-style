@@ -7,7 +7,7 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas:
         "menu menu"
@@ -19,6 +19,7 @@ main {
     display: flex;
     padding: 1rem;
     justify-content: end;
+
 }
 
 aside {
@@ -30,13 +31,13 @@ aside {
     }
 }
 
-
 .video {
     & img {
-        max-width: 100%;
+        width: 100%;
         height: auto;
     }
 }
+
 
 h1 {
     font-style: normal;
@@ -47,6 +48,7 @@ h1 {
 
 .destaque {
     flex-direction: column;
+    max-width: 1280px;
 
     & .visualizacao {
         font-weight: 600;
@@ -247,6 +249,7 @@ h2 {
         display: flex;
         font-size: 14px;
         gap: 10px;
+
         & img {
             width: 42px;
             height: 42px;
@@ -280,34 +283,38 @@ h2 {
         cursor: pointer;
     }
 
-        & i {
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            &::before {
-                content: '';
-                width: 1.5rem;
-                height: 1.5rem;
-                background-size: cover;
-                margin-right: 5px;
-            }
-            &.thumbs-ups::before {
-                background-image: url('../img/thumbs-up.png');
-            }
+    & i {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
 
-            &.thumbs-down::before {
-                background-image: url('../img/thumbs-down.png');
-            }
-            &.share::before {
-                background-image: url('../img/share-2.png');
-            }
-            &.download::before {
-                background-image: url('../img/download.png');
-            }
+        &::before {
+            content: '';
+            width: 1.5rem;
+            height: 1.5rem;
+            background-size: cover;
+            margin-right: 5px;
         }
 
-    
+        &.thumbs-ups::before {
+            background-image: url('../img/thumbs-up.png');
+        }
+
+        &.thumbs-down::before {
+            background-image: url('../img/thumbs-down.png');
+        }
+
+        &.share::before {
+            background-image: url('../img/share-2.png');
+        }
+
+        &.download::before {
+            background-image: url('../img/download.png');
+        }
+    }
+
+
 }
